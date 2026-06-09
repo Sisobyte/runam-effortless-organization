@@ -129,87 +129,16 @@ function DashboardMockup() {
               <span className="size-3 rounded-full bg-[oklch(0.82_0.15_85)]" />
               <span className="size-3 rounded-full bg-[oklch(0.75_0.17_145)]" />
             </div>
-            <div className="ml-3 text-xs text-muted-foreground">runam.app / workspace / acme</div>
+            <div className="ml-3 text-xs text-muted-foreground">runam.app / dashboard</div>
           </div>
-
-          <div className="grid grid-cols-12 min-h-[480px]">
-            {/* Sidebar */}
-            <aside className="col-span-3 border-r border-border p-4 bg-muted/30 hidden md:block">
-              <div className="flex items-center gap-2 mb-5">
-                <div className="size-7 rounded-lg bg-gradient-brand" />
-                <div className="font-semibold">Runam</div>
-              </div>
-              <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-2">Workspaces</div>
-              <ul className="space-y-1 mb-5 text-sm">
-                <li className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-accent"><User className="size-4 text-indigo"/> Personal</li>
-                <li className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-accent/70 font-medium"><Users className="size-4 text-electric"/> Acme Team</li>
-              </ul>
-              <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-2">Folders</div>
-              <ul className="space-y-1 text-sm">
-                {["Q4 Launch","Marketing","Engineering","Design Sprints","Research"].map((f,i) => (
-                  <li key={f} className={`flex items-center gap-2 px-2 py-1.5 rounded-lg ${i===0?"bg-gradient-to-r from-indigo/15 to-electric/10 text-foreground":"hover:bg-accent text-muted-foreground"}`}>
-                    <Folder className="size-4" /> {f}
-                  </li>
-                ))}
-              </ul>
-            </aside>
-
-            {/* Main */}
-            <main className="col-span-12 md:col-span-9 p-5">
-              <div className="flex items-center justify-between mb-5">
-                <div>
-                  <div className="text-xs text-muted-foreground">Folder</div>
-                  <h3 className="text-xl font-semibold">Q4 Launch</h3>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
-                    {["#8b5cf6","#06b6d4","#10b981","#f59e0b"].map((c,i)=>(
-                      <div key={i} className="size-7 rounded-full border-2 border-card" style={{background:c}} />
-                    ))}
-                  </div>
-                  <button className="rounded-lg bg-gradient-brand text-white text-xs px-3 py-1.5 font-medium">+ New task</button>
-                </div>
-              </div>
-
-              {/* Stat row */}
-              <div className="grid grid-cols-3 gap-3 mb-5">
-                {[
-                  {label:"Total",val:48,c:"from-indigo/15 to-electric/10"},
-                  {label:"Done",val:31,c:"from-emerald/20 to-cyan/10"},
-                  {label:"Overdue",val:2,c:"from-soft-orange/25 to-soft-orange/5"},
-                ].map((s) => (
-                  <div key={s.label} className={`rounded-xl p-3 bg-gradient-to-br ${s.c} border border-border`}>
-                    <div className="text-[11px] text-muted-foreground">{s.label}</div>
-                    <div className="text-2xl font-semibold tabular-nums">{s.val}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Task list */}
-              <div className="rounded-xl border border-border divide-y divide-border overflow-hidden">
-                {[
-                  {t:"Finalize launch landing page", d:"Today", p:80, done:false},
-                  {t:"Schedule press briefings", d:"Tomorrow", p:40, done:false},
-                  {t:"Compile beta feedback", d:"Yesterday", p:100, done:true},
-                  {t:"Approve hero motion design", d:"Fri", p:60, done:false},
-                ].map((t,i)=>(
-                  <div key={i} className="flex items-center gap-3 p-3 hover:bg-accent/40 transition">
-                    <div className={`size-5 rounded-md grid place-items-center border ${t.done?"bg-emerald/80 border-emerald":"border-border"}`}>
-                      {t.done && <Check className="size-3 text-white" />}
-                    </div>
-                    <div className="flex-1">
-                      <div className={`text-sm font-medium ${t.done?"line-through text-muted-foreground":""}`}>{t.t}</div>
-                      <div className="h-1.5 mt-1.5 rounded-full bg-muted overflow-hidden">
-                        <div className="h-full bg-gradient-brand" style={{width:`${t.p}%`}} />
-                      </div>
-                    </div>
-                    <div className="text-xs text-muted-foreground w-16 text-right">{t.d}</div>
-                  </div>
-                ))}
-              </div>
-            </main>
-          </div>
+          <img
+            src={dashboardAsset.url}
+            alt="Runam dashboard showing productivity overview, folders, tasks and meeting stats"
+            className="w-full h-auto block"
+            loading="eager"
+          />
         </div>
+
       </div>
 
       {/* floating cards */}
