@@ -7,6 +7,17 @@ import {
   ListChecks, Inbox, Clock, TrendingUp, MousePointerClick, Apple, Chrome,
   Twitter, Github, Linkedin,
 } from "lucide-react";
+import dashboardAsset from "@/assets/app/dashboard.png.asset.json";
+import tasksAsset from "@/assets/app/tasks.png.asset.json";
+import tasksLightAsset from "@/assets/app/tasks-light.png.asset.json";
+import meetingsAsset from "@/assets/app/meetings.png.asset.json";
+import meetingLiveAsset from "@/assets/app/meeting-live.png.asset.json";
+import meetingRecordingAsset from "@/assets/app/meeting-recording.png.asset.json";
+import notesAsset from "@/assets/app/notes.png.asset.json";
+import teamsAsset from "@/assets/app/teams.png.asset.json";
+import teamDetailAsset from "@/assets/app/team-detail.png.asset.json";
+import notificationsAsset from "@/assets/app/notifications.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -118,87 +129,16 @@ function DashboardMockup() {
               <span className="size-3 rounded-full bg-[oklch(0.82_0.15_85)]" />
               <span className="size-3 rounded-full bg-[oklch(0.75_0.17_145)]" />
             </div>
-            <div className="ml-3 text-xs text-muted-foreground">runam.app / workspace / acme</div>
+            <div className="ml-3 text-xs text-muted-foreground">runam.app / dashboard</div>
           </div>
-
-          <div className="grid grid-cols-12 min-h-[480px]">
-            {/* Sidebar */}
-            <aside className="col-span-3 border-r border-border p-4 bg-muted/30 hidden md:block">
-              <div className="flex items-center gap-2 mb-5">
-                <div className="size-7 rounded-lg bg-gradient-brand" />
-                <div className="font-semibold">Runam</div>
-              </div>
-              <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-2">Workspaces</div>
-              <ul className="space-y-1 mb-5 text-sm">
-                <li className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-accent"><User className="size-4 text-indigo"/> Personal</li>
-                <li className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-accent/70 font-medium"><Users className="size-4 text-electric"/> Acme Team</li>
-              </ul>
-              <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-2">Folders</div>
-              <ul className="space-y-1 text-sm">
-                {["Q4 Launch","Marketing","Engineering","Design Sprints","Research"].map((f,i) => (
-                  <li key={f} className={`flex items-center gap-2 px-2 py-1.5 rounded-lg ${i===0?"bg-gradient-to-r from-indigo/15 to-electric/10 text-foreground":"hover:bg-accent text-muted-foreground"}`}>
-                    <Folder className="size-4" /> {f}
-                  </li>
-                ))}
-              </ul>
-            </aside>
-
-            {/* Main */}
-            <main className="col-span-12 md:col-span-9 p-5">
-              <div className="flex items-center justify-between mb-5">
-                <div>
-                  <div className="text-xs text-muted-foreground">Folder</div>
-                  <h3 className="text-xl font-semibold">Q4 Launch</h3>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
-                    {["#8b5cf6","#06b6d4","#10b981","#f59e0b"].map((c,i)=>(
-                      <div key={i} className="size-7 rounded-full border-2 border-card" style={{background:c}} />
-                    ))}
-                  </div>
-                  <button className="rounded-lg bg-gradient-brand text-white text-xs px-3 py-1.5 font-medium">+ New task</button>
-                </div>
-              </div>
-
-              {/* Stat row */}
-              <div className="grid grid-cols-3 gap-3 mb-5">
-                {[
-                  {label:"Total",val:48,c:"from-indigo/15 to-electric/10"},
-                  {label:"Done",val:31,c:"from-emerald/20 to-cyan/10"},
-                  {label:"Overdue",val:2,c:"from-soft-orange/25 to-soft-orange/5"},
-                ].map((s) => (
-                  <div key={s.label} className={`rounded-xl p-3 bg-gradient-to-br ${s.c} border border-border`}>
-                    <div className="text-[11px] text-muted-foreground">{s.label}</div>
-                    <div className="text-2xl font-semibold tabular-nums">{s.val}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Task list */}
-              <div className="rounded-xl border border-border divide-y divide-border overflow-hidden">
-                {[
-                  {t:"Finalize launch landing page", d:"Today", p:80, done:false},
-                  {t:"Schedule press briefings", d:"Tomorrow", p:40, done:false},
-                  {t:"Compile beta feedback", d:"Yesterday", p:100, done:true},
-                  {t:"Approve hero motion design", d:"Fri", p:60, done:false},
-                ].map((t,i)=>(
-                  <div key={i} className="flex items-center gap-3 p-3 hover:bg-accent/40 transition">
-                    <div className={`size-5 rounded-md grid place-items-center border ${t.done?"bg-emerald/80 border-emerald":"border-border"}`}>
-                      {t.done && <Check className="size-3 text-white" />}
-                    </div>
-                    <div className="flex-1">
-                      <div className={`text-sm font-medium ${t.done?"line-through text-muted-foreground":""}`}>{t.t}</div>
-                      <div className="h-1.5 mt-1.5 rounded-full bg-muted overflow-hidden">
-                        <div className="h-full bg-gradient-brand" style={{width:`${t.p}%`}} />
-                      </div>
-                    </div>
-                    <div className="text-xs text-muted-foreground w-16 text-right">{t.d}</div>
-                  </div>
-                ))}
-              </div>
-            </main>
-          </div>
+          <img
+            src={dashboardAsset.url}
+            alt="Runam dashboard showing productivity overview, folders, tasks and meeting stats"
+            className="w-full h-auto block"
+            loading="eager"
+          />
         </div>
+
       </div>
 
       {/* floating cards */}
@@ -527,44 +467,24 @@ function AIMeetingSection() {
 
         <div className="relative" data-reveal>
           <div className="absolute -inset-8 bg-gradient-brand opacity-25 blur-3xl"/>
-          <div className="relative glass rounded-3xl p-6 shadow-elegant">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="size-10 rounded-xl bg-gradient-brand grid place-items-center text-white"><Mic className="size-5"/></div>
-                <div>
-                  <div className="text-sm font-semibold">Product Sync</div>
-                  <div className="text-xs text-muted-foreground">Recording · 32:14</div>
-                </div>
-              </div>
-              <span className="text-xs px-2 py-1 rounded-full bg-destructive/15 text-destructive font-medium inline-flex items-center gap-1.5">
-                <span className="size-1.5 rounded-full bg-destructive animate-pulse"/> Live
-              </span>
-            </div>
-
-            <div className="mt-5 space-y-2 max-h-48 overflow-hidden text-sm">
-              {[
-                ["Sara","We should ship the new onboarding by Friday."],
-                ["Marc","I'll own the design review tomorrow."],
-                ["AI","Detected 3 action items · assigning…"],
-              ].map(([who,what],i)=>(
-                <div key={i} className="flex gap-3">
-                  <div className={`text-xs font-semibold w-10 ${who==="AI"?"text-purple":"text-muted-foreground"}`}>{who}</div>
-                  <div className="flex-1 text-foreground/90">{what}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 rounded-2xl p-4 bg-gradient-to-br from-purple/10 via-electric/10 to-cyan/10 border border-glass-border">
-              <div className="text-xs uppercase tracking-wider text-muted-foreground flex items-center gap-1.5"><Sparkles className="size-3.5"/> AI Summary</div>
-              <p className="mt-1.5 text-sm">Team aligned on Friday onboarding launch. 3 action items extracted and assigned to <strong>Q4 Launch</strong>.</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {["Ship onboarding","Design review","Email beta users"].map(t => (
-                  <span key={t} className="text-[11px] px-2 py-1 rounded-lg bg-card border border-border">✓ {t}</span>
-                ))}
-              </div>
-            </div>
+          <div className="relative glass rounded-3xl p-2 shadow-elegant overflow-hidden">
+            <img
+              src={meetingsAsset.url}
+              alt="Runam meetings view with AI recording summary and take details"
+              className="rounded-2xl w-full h-auto block border border-border"
+              loading="lazy"
+            />
+          </div>
+          <div className="hidden md:block absolute -bottom-8 -left-6 w-64 glass rounded-2xl p-2 shadow-card animate-float-slow">
+            <img
+              src={meetingRecordingAsset.url}
+              alt="Live AI recording panel"
+              className="rounded-xl w-full h-auto block border border-border"
+              loading="lazy"
+            />
           </div>
         </div>
+
       </div>
     </section>
   );
@@ -586,27 +506,16 @@ function NotesSection() {
         </div>
         <div className="lg:col-span-3 relative" data-reveal>
           <div className="absolute -inset-6 bg-gradient-to-br from-emerald/20 to-cyan/20 blur-3xl"/>
-          <div className="relative glass rounded-3xl shadow-elegant overflow-hidden">
-            <div className="flex items-center gap-2 px-5 py-3 border-b border-glass-border">
-              <Folder className="size-4 text-electric"/>
-              <span className="text-xs text-muted-foreground">Research / Onboarding</span>
-              <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-purple/15 text-purple inline-flex items-center gap-1"><Sparkles className="size-3"/> AI</span>
-            </div>
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold tracking-tight">User Onboarding — Research Notes</h3>
-              <p className="text-xs text-muted-foreground mt-1">Updated 2h ago · 4 collaborators</p>
-              <div className="mt-5 space-y-3 text-sm leading-relaxed">
-                <p><span className="bg-soft-orange/30 rounded px-1">Users drop off</span> when the first folder is empty. We should pre-seed templates.</p>
-                <p className="text-muted-foreground">Interviews highlight that <strong className="text-foreground">folder clarity</strong> is the #1 predictor of week-2 retention.</p>
-                <ul className="space-y-1.5">
-                  <li className="flex items-start gap-2"><span className="mt-1.5 size-1.5 rounded-full bg-electric"/> Add quick-start folder gallery</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 size-1.5 rounded-full bg-electric"/> Tooltip pointing at "+ New Folder"</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 size-1.5 rounded-full bg-electric"/> AI suggestion: "Want help creating your first folder?"</li>
-                </ul>
-              </div>
-            </div>
+          <div className="relative glass rounded-3xl shadow-elegant overflow-hidden p-2">
+            <img
+              src={notesAsset.url}
+              alt="Runam notes editor with rich text formatting and folder-based organization"
+              className="rounded-2xl w-full h-auto block border border-border"
+              loading="lazy"
+            />
           </div>
         </div>
+
       </div>
     </section>
   );
@@ -895,7 +804,41 @@ function Footer() {
 }
 
 /* ---------- Page ---------- */
+function ProductGallery() {
+  const shots = [
+    { src: tasksAsset.url, title: "Personal & Team Folders", desc: "Tabbed views, fast search, and a clean folder table." },
+    { src: teamsAsset.url, title: "Teams", desc: "Add teams, manage members, and collaborate on shared work." },
+    { src: teamDetailAsset.url, title: "Roles & Invites", desc: "Owner, member, and pending invites — all in one place." },
+    { src: meetingLiveAsset.url, title: "Live AI Recording", desc: "Record meetings with daily limits and pause/stop controls." },
+    { src: notificationsAsset.url, title: "Smart Notifications", desc: "Stay on top of meetings, tasks, and team updates." },
+    { src: tasksLightAsset.url, title: "Light Mode, Built-in", desc: "Beautiful in both light and dark — your call." },
+  ];
+  return (
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-2xl mb-12" data-reveal>
+          <div className="text-xs uppercase tracking-[0.2em] text-electric font-semibold">Inside Runam</div>
+          <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight">A closer look at <span className="text-gradient">every surface.</span></h2>
+          <p className="mt-3 text-muted-foreground text-lg">Real screens from Runam — not mockups.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {shots.map((s) => (
+            <figure key={s.title} className="glass rounded-3xl p-3 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all duration-300" data-reveal>
+              <img src={s.src} alt={s.title} className="rounded-2xl w-full h-auto block border border-border" loading="lazy" />
+              <figcaption className="px-2 py-3">
+                <div className="font-semibold">{s.title}</div>
+                <div className="text-sm text-muted-foreground">{s.desc}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function RunamLanding() {
+
   const { dark, toggle } = useTheme();
   const ref = useReveal();
   return (
@@ -909,6 +852,8 @@ function RunamLanding() {
         <AIMeetingSection />
         <NotesSection />
         <TeamCollab />
+        <ProductGallery />
+
         <DashboardStats />
         <HowItWorks />
         <Testimonials />
