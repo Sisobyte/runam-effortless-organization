@@ -818,6 +818,8 @@ function RunamLanding() {
         <AIMeetingSection />
         <NotesSection />
         <TeamCollab />
+        <ProductGallery />
+
         <DashboardStats />
         <HowItWorks />
         <Testimonials />
