@@ -467,44 +467,24 @@ function AIMeetingSection() {
 
         <div className="relative" data-reveal>
           <div className="absolute -inset-8 bg-gradient-brand opacity-25 blur-3xl"/>
-          <div className="relative glass rounded-3xl p-6 shadow-elegant">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="size-10 rounded-xl bg-gradient-brand grid place-items-center text-white"><Mic className="size-5"/></div>
-                <div>
-                  <div className="text-sm font-semibold">Product Sync</div>
-                  <div className="text-xs text-muted-foreground">Recording · 32:14</div>
-                </div>
-              </div>
-              <span className="text-xs px-2 py-1 rounded-full bg-destructive/15 text-destructive font-medium inline-flex items-center gap-1.5">
-                <span className="size-1.5 rounded-full bg-destructive animate-pulse"/> Live
-              </span>
-            </div>
-
-            <div className="mt-5 space-y-2 max-h-48 overflow-hidden text-sm">
-              {[
-                ["Sara","We should ship the new onboarding by Friday."],
-                ["Marc","I'll own the design review tomorrow."],
-                ["AI","Detected 3 action items · assigning…"],
-              ].map(([who,what],i)=>(
-                <div key={i} className="flex gap-3">
-                  <div className={`text-xs font-semibold w-10 ${who==="AI"?"text-purple":"text-muted-foreground"}`}>{who}</div>
-                  <div className="flex-1 text-foreground/90">{what}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 rounded-2xl p-4 bg-gradient-to-br from-purple/10 via-electric/10 to-cyan/10 border border-glass-border">
-              <div className="text-xs uppercase tracking-wider text-muted-foreground flex items-center gap-1.5"><Sparkles className="size-3.5"/> AI Summary</div>
-              <p className="mt-1.5 text-sm">Team aligned on Friday onboarding launch. 3 action items extracted and assigned to <strong>Q4 Launch</strong>.</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {["Ship onboarding","Design review","Email beta users"].map(t => (
-                  <span key={t} className="text-[11px] px-2 py-1 rounded-lg bg-card border border-border">✓ {t}</span>
-                ))}
-              </div>
-            </div>
+          <div className="relative glass rounded-3xl p-2 shadow-elegant overflow-hidden">
+            <img
+              src={meetingsAsset.url}
+              alt="Runam meetings view with AI recording summary and take details"
+              className="rounded-2xl w-full h-auto block border border-border"
+              loading="lazy"
+            />
+          </div>
+          <div className="hidden md:block absolute -bottom-8 -left-6 w-64 glass rounded-2xl p-2 shadow-card animate-float-slow">
+            <img
+              src={meetingRecordingAsset.url}
+              alt="Live AI recording panel"
+              className="rounded-xl w-full h-auto block border border-border"
+              loading="lazy"
+            />
           </div>
         </div>
+
       </div>
     </section>
   );
