@@ -7,6 +7,17 @@ import {
   ListChecks, Inbox, Clock, TrendingUp, MousePointerClick, Apple, Chrome,
   Twitter, Github, Linkedin,
 } from "lucide-react";
+import dashboardAsset from "@/assets/app/dashboard.png.asset.json";
+import tasksAsset from "@/assets/app/tasks.png.asset.json";
+import tasksLightAsset from "@/assets/app/tasks-light.png.asset.json";
+import meetingsAsset from "@/assets/app/meetings.png.asset.json";
+import meetingLiveAsset from "@/assets/app/meeting-live.png.asset.json";
+import meetingRecordingAsset from "@/assets/app/meeting-recording.png.asset.json";
+import notesAsset from "@/assets/app/notes.png.asset.json";
+import teamsAsset from "@/assets/app/teams.png.asset.json";
+import teamDetailAsset from "@/assets/app/team-detail.png.asset.json";
+import notificationsAsset from "@/assets/app/notifications.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
