@@ -506,27 +506,16 @@ function NotesSection() {
         </div>
         <div className="lg:col-span-3 relative" data-reveal>
           <div className="absolute -inset-6 bg-gradient-to-br from-emerald/20 to-cyan/20 blur-3xl"/>
-          <div className="relative glass rounded-3xl shadow-elegant overflow-hidden">
-            <div className="flex items-center gap-2 px-5 py-3 border-b border-glass-border">
-              <Folder className="size-4 text-electric"/>
-              <span className="text-xs text-muted-foreground">Research / Onboarding</span>
-              <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-purple/15 text-purple inline-flex items-center gap-1"><Sparkles className="size-3"/> AI</span>
-            </div>
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold tracking-tight">User Onboarding — Research Notes</h3>
-              <p className="text-xs text-muted-foreground mt-1">Updated 2h ago · 4 collaborators</p>
-              <div className="mt-5 space-y-3 text-sm leading-relaxed">
-                <p><span className="bg-soft-orange/30 rounded px-1">Users drop off</span> when the first folder is empty. We should pre-seed templates.</p>
-                <p className="text-muted-foreground">Interviews highlight that <strong className="text-foreground">folder clarity</strong> is the #1 predictor of week-2 retention.</p>
-                <ul className="space-y-1.5">
-                  <li className="flex items-start gap-2"><span className="mt-1.5 size-1.5 rounded-full bg-electric"/> Add quick-start folder gallery</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 size-1.5 rounded-full bg-electric"/> Tooltip pointing at "+ New Folder"</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 size-1.5 rounded-full bg-electric"/> AI suggestion: "Want help creating your first folder?"</li>
-                </ul>
-              </div>
-            </div>
+          <div className="relative glass rounded-3xl shadow-elegant overflow-hidden p-2">
+            <img
+              src={notesAsset.url}
+              alt="Runam notes editor with rich text formatting and folder-based organization"
+              className="rounded-2xl w-full h-auto block border border-border"
+              loading="lazy"
+            />
           </div>
         </div>
+
       </div>
     </section>
   );
