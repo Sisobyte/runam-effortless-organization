@@ -2,6 +2,10 @@
 @source "../src";
 @import "tw-animate-css";
 
+@source inline("{bg,text,from,to,via,border}-{indigo,electric,purple,cyan,emerald,soft-orange}/{5,10,15,20,25,30,40,70,80}");
+@source inline("text-indigo text-electric text-purple text-cyan text-emerald text-soft-orange");
+@source inline("bg-indigo bg-electric bg-purple bg-cyan bg-emerald bg-soft-orange");
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
