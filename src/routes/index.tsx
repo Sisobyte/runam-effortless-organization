@@ -804,7 +804,41 @@ function Footer() {
 }
 
 /* ---------- Page ---------- */
+function ProductGallery() {
+  const shots = [
+    { src: tasksAsset.url, title: "Personal & Team Folders", desc: "Tabbed views, fast search, and a clean folder table." },
+    { src: teamsAsset.url, title: "Teams", desc: "Add teams, manage members, and collaborate on shared work." },
+    { src: teamDetailAsset.url, title: "Roles & Invites", desc: "Owner, member, and pending invites — all in one place." },
+    { src: meetingLiveAsset.url, title: "Live AI Recording", desc: "Record meetings with daily limits and pause/stop controls." },
+    { src: notificationsAsset.url, title: "Smart Notifications", desc: "Stay on top of meetings, tasks, and team updates." },
+    { src: tasksLightAsset.url, title: "Light Mode, Built-in", desc: "Beautiful in both light and dark — your call." },
+  ];
+  return (
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-2xl mb-12" data-reveal>
+          <div className="text-xs uppercase tracking-[0.2em] text-electric font-semibold">Inside Runam</div>
+          <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight">A closer look at <span className="text-gradient">every surface.</span></h2>
+          <p className="mt-3 text-muted-foreground text-lg">Real screens from Runam — not mockups.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {shots.map((s) => (
+            <figure key={s.title} className="glass rounded-3xl p-3 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all duration-300" data-reveal>
+              <img src={s.src} alt={s.title} className="rounded-2xl w-full h-auto block border border-border" loading="lazy" />
+              <figcaption className="px-2 py-3">
+                <div className="font-semibold">{s.title}</div>
+                <div className="text-sm text-muted-foreground">{s.desc}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function RunamLanding() {
+
   const { dark, toggle } = useTheme();
   const ref = useReveal();
   return (
