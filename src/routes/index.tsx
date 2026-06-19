@@ -194,7 +194,7 @@ function Nav({ dark, toggle }: { dark: boolean; toggle: () => void }) {
             <button onClick={toggle} aria-label="Toggle theme" className="size-9 grid place-items-center rounded-lg border border-border hover:bg-accent transition">
               {dark ? <Sun className="size-4"/> : <Moon className="size-4"/>}
             </button>
-            <a href="#cta" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-lg bg-gradient-brand text-white shadow-glow hover:opacity-95 transition">
+            <a href="https://runam-app-kappa.vercel.app" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-lg bg-gradient-brand text-white shadow-glow hover:opacity-95 transition">
               Start free <ArrowRight className="size-4"/>
             </a>
           </div>
@@ -220,19 +220,18 @@ function Hero() {
             <span className="text-gradient">Execute Faster.</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Runam is the AI-powered task management platform built around a <strong className="text-foreground font-semibold">Folder-First</strong> workflow — helping individuals and teams stay organized, collaborate effortlessly, and never lose track of what matters.
+            Runam helps individuals and teams organize work through a <strong className="text-foreground font-semibold">Folder-First</strong> workflow, while AI-powered meeting transcription and smart summaries turn conversations into clear, actionable insights.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="#cta" className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-white font-medium shadow-elegant hover:-translate-y-0.5 transition">
+            <a href="https://runam-app-kappa.vercel.app" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-white font-medium shadow-elegant hover:-translate-y-0.5 transition">
               Start Free <ArrowRight className="size-4 group-hover:translate-x-0.5 transition"/>
             </a>
             <a href="#features" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl glass font-medium hover:bg-accent/40 transition">
-              <Play className="size-4"/> Watch Demo
+              <Sparkles className="size-4"/> Explore Features
             </a>
           </div>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1.5"><Chrome className="size-3.5"/> Google Sign-In</span>
-            <span className="inline-flex items-center gap-1.5"><Apple className="size-3.5"/> Apple Sign-In</span>
             <span className="inline-flex items-center gap-1.5"><Shield className="size-3.5"/> No Credit Card</span>
             <span className="inline-flex items-center gap-1.5"><Users className="size-3.5"/> Used by Pros & Teams</span>
           </div>
@@ -670,10 +669,10 @@ function HowItWorks() {
 
 function Testimonials() {
   const items = [
-    { q: "Runam's folder-first model finally killed our scattered to-do chaos. We ship faster and miss nothing.", n: "Sara Chen", r: "Head of Operations, Helios", a: "#6366f1" },
-    { q: "The AI meeting summaries alone save our team 8 hours every week — and they actually become tasks.", n: "Marc Alvarez", r: "Product Lead, Quanta", a: "#06b6d4" },
-    { q: "It's the first tool where my personal and team work coexist without ever bleeding into each other.", n: "Kira Iwasaki", r: "Founder, Atlas Studio", a: "#10b981" },
-    { q: "Our missed-deadline rate dropped 70% in the first month. Pure organizational compounding.", n: "Jordan Reed", r: "Engineering Manager, Northwind", a: "#a855f7" },
+    { q: "Runam's folder-first model finally killed our scattered to-do chaos. We ship faster and miss nothing.", n: "Kayode", r: "Head of Operations", a: "#0f9d8b" },
+    { q: "The AI meeting summaries alone save our team 8 hours every week — and they actually become tasks.", n: "Mr Prince", r: "Product Lead", a: "#06b6d4" },
+    { q: "It's the first tool where my personal and team work coexist without ever bleeding into each other.", n: "Mrs Agatha", r: "Founder & Creative Director", a: "#10b981" },
+    { q: "Our missed-deadline rate dropped 70% in the first month. Pure organizational compounding.", n: "Engr Thankgod", r: "Engineering Manager", a: "#a855f7" },
   ];
   return (
     <section className="py-24 md:py-32">
@@ -704,10 +703,65 @@ function Testimonials() {
 }
 
 function Pricing() {
-  const plans = [
-    { n: "Free", p: "$0", d: "For individuals getting organized.", f: ["1 workspace","Up to 3 folders","Unlimited tasks","Personal notes","Mobile + desktop"], cta: "Start Free" },
-    { n: "Pro", p: "$9", d: "For professionals shipping serious work.", f: ["Unlimited folders","AI meeting assistant","Advanced search","Templates","Priority support"], cta: "Go Pro", featured: true },
-    { n: "Team", p: "$19", d: "For growing teams that collaborate.", f: ["Everything in Pro","Team workspace","Role-based access","Team dashboards","Activity tracking"], cta: "Start Team" },
+  type Plan = {
+    n: string;
+    p: string;
+    suffix?: string;
+    sub?: string;
+    d: string;
+    f: string[];
+    cta: string;
+    href?: string;
+    featured?: boolean;
+    upcoming?: boolean;
+  };
+  const plans: Plan[] = [
+    {
+      n: "Free",
+      p: "₦0",
+      suffix: "/mo",
+      d: "Get organized with the essentials.",
+      f: [
+        "10 personal folders",
+        "Up to 2 teams",
+        "5 tasks per folder",
+        "3 subtasks per task",
+        "3 AI recordings / day",
+      ],
+      cta: "Start Free",
+      href: "https://runam-app-kappa.vercel.app",
+    },
+    {
+      n: "Premium",
+      p: "₦2,500",
+      suffix: "/mo",
+      sub: "or ₦24,000/year — save 20%",
+      d: "For professionals who need more room.",
+      f: [
+        "30 personal folders",
+        "Up to 5 teams",
+        "10 tasks per folder",
+        "8 subtasks per task",
+        "Unlimited AI recordings",
+      ],
+      cta: "Upgrade to Premium",
+      href: "https://runam-app-kappa.vercel.app",
+      featured: true,
+    },
+    {
+      n: "Max",
+      p: "Coming Soon",
+      d: "Unlimited everything for power teams.",
+      f: [
+        "Unlimited folders",
+        "Unlimited teams",
+        "Unlimited tasks & subtasks",
+        "Unlimited AI recordings",
+        "Priority support",
+      ],
+      cta: "Notify Me",
+      upcoming: true,
+    },
   ];
   return (
     <section id="pricing" className="py-24 md:py-32">
@@ -721,20 +775,27 @@ function Pricing() {
             <div key={p.n} className={`relative rounded-3xl p-[1.5px] ${p.featured ? "bg-gradient-brand shadow-elegant" : "bg-border"}`} data-reveal>
               <div className="rounded-[calc(1.5rem-1px)] bg-card p-7 h-full flex flex-col">
                 {p.featured && <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[11px] font-semibold px-3 py-1 rounded-full bg-gradient-brand text-white shadow-glow">Most Popular</span>}
+                {p.upcoming && <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[11px] font-semibold px-3 py-1 rounded-full bg-soft-orange/20 text-soft-orange border border-soft-orange/30">Upcoming</span>}
                 <h3 className="text-lg font-semibold">{p.n}</h3>
                 <div className="mt-2 flex items-baseline gap-1">
-                  <span className="text-5xl font-bold tracking-tight">{p.p}</span>
-                  <span className="text-muted-foreground text-sm">/mo</span>
+                  <span className={`font-bold tracking-tight ${p.upcoming ? "text-2xl" : "text-5xl"}`}>{p.p}</span>
+                  {p.suffix && <span className="text-muted-foreground text-sm">{p.suffix}</span>}
                 </div>
+                {p.sub && <div className="mt-1 text-xs text-emerald">{p.sub}</div>}
                 <p className="mt-2 text-sm text-muted-foreground">{p.d}</p>
                 <ul className="mt-6 space-y-2.5 text-sm flex-1">
                   {p.f.map((x)=>(<li key={x} className="flex items-start gap-2"><Check className="size-4 text-emerald mt-0.5"/> {x}</li>))}
                 </ul>
-                <button className={`mt-7 w-full py-3 rounded-xl font-medium transition ${p.featured ? "bg-gradient-brand text-white shadow-glow hover:-translate-y-0.5" : "border border-border hover:bg-accent"}`}>{p.cta}</button>
+                {p.href ? (
+                  <a href={p.href} target="_blank" rel="noopener noreferrer" className={`mt-7 w-full py-3 rounded-xl font-medium transition text-center ${p.featured ? "bg-gradient-brand text-white shadow-glow hover:-translate-y-0.5" : "border border-border hover:bg-accent"}`}>{p.cta}</a>
+                ) : (
+                  <button disabled className="mt-7 w-full py-3 rounded-xl font-medium border border-border opacity-60 cursor-not-allowed">{p.cta}</button>
+                )}
               </div>
             </div>
           ))}
         </div>
+        <p className="mt-6 text-center text-xs text-muted-foreground">Payments coming soon — stay tuned!</p>
       </div>
     </section>
   );
@@ -751,8 +812,7 @@ function FinalCTA() {
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight">The most organized way<br/><span className="text-gradient">to get work done.</span></h2>
               <p className="mt-5 text-lg text-muted-foreground max-w-xl mx-auto">Stop managing chaos. Start building momentum.</p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href="#" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-white font-medium shadow-glow hover:-translate-y-0.5 transition">Start Free Today <ArrowRight className="size-4"/></a>
-                <a href="#" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl glass font-medium hover:bg-accent/40 transition"><MousePointerClick className="size-4"/> Book Demo</a>
+                <a href="https://runam-app-kappa.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-white font-medium shadow-glow hover:-translate-y-0.5 transition">Start Free Today <ArrowRight className="size-4"/></a>
               </div>
               <div className="mt-6 text-xs text-muted-foreground">No credit card · Free forever plan · Cancel anytime</div>
             </div>
