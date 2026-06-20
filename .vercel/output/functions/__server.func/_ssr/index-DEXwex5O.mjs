@@ -1,16 +1,16 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { S as Sun, M as Moon, A as ArrowRight, C as ChevronRight, a as Sparkles, b as Chromium, c as Shield, U as Users, X, d as Check, F as FolderTree, e as Folder, L as ListChecks, f as CircleCheck, g as User, h as Calendar, i as ChartColumn, j as Search, k as Smartphone, B as Brain, l as Mic, m as FileText, n as Share2, o as Activity, T as TrendingUp, Z as Zap, p as Star, q as Twitter, G as Github, r as Linkedin, s as Clock, I as Inbox } from "../_libs/lucide-react.mjs";
-const logo = "/assets/logo-DcpC-U7A.png";
-const dashboard = "/assets/dashboard-DH3EeLMk.png";
-const tasks = "/assets/tasks-CNlIil4k.png";
-const tasksLight = "/assets/tasks-light-By4DbtNI.png";
-const meetings = "/assets/meetings-FJsuFFay.png";
-const meetingLive = "/assets/meeting-live-DbXoN5Zk.png";
-const meetingRecording = "/assets/meeting-recording-B6F4_n35.png";
-const notes = "/assets/notes-Dmz_TclL.png";
-const teams = "/assets/teams-BsL0CMaC.png";
-const teamDetail = "/assets/team-detail-DDmIzTHg.png";
-const notifications = "/assets/notifications-BknnNuAd.png";
+const logo = "data:image/webp;base64,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";
+const dashboard = "/assets/dashboard-DdQIly3R.webp";
+const tasks = "/assets/tasks-Bb70y7e6.webp";
+const tasksLight = "/assets/tasks-light-CBBmbLCr.webp";
+const meetings = "/assets/meetings-B-vAUmZI.webp";
+const meetingLive = "/assets/meeting-live-DEM4430O.webp";
+const meetingRecording = "/assets/meeting-recording-BYJYafYM.webp";
+const notes = "/assets/notes-CV2jUb-a.webp";
+const teams = "/assets/teams-CsTk9piE.webp";
+const teamDetail = "/assets/team-detail-9aX5LfGh.webp";
+const notifications = "/assets/notifications-DDIYlRk2.webp";
 function useReveal() {
   const ref = reactExports.useRef(null);
   reactExports.useEffect(() => {

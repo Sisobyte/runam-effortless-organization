@@ -7,17 +7,17 @@ import {
   ListChecks, Inbox, Clock, TrendingUp, MousePointerClick, Apple, Chrome,
   Twitter, Github, Linkedin,
 } from "lucide-react";
-import logo from "../assets/logo.png";
-import dashboard from "../assets/dashboard.png";
-import tasks from "../assets/tasks.png";
-import tasksLight from "../assets/tasks-light.png";
-import meetings from "../assets/meetings.png";
-import meetingLive from "../assets/meeting-live.png";
-import meetingRecording from "../assets/meeting-recording.png";
-import notes from "../assets/notes.png";
-import teams from "../assets/teams.png";
-import teamDetail from "../assets/team-detail.png";
-import notifications from "../assets/notifications.png";
+import logo from "../assets/logo.webp";
+import dashboard from "../assets/dashboard.webp";
+import tasks from "../assets/tasks.webp";
+import tasksLight from "../assets/tasks-light.webp";
+import meetings from "../assets/meetings.webp";
+import meetingLive from "../assets/meeting-live.webp";
+import meetingRecording from "../assets/meeting-recording.webp";
+import notes from "../assets/notes.webp";
+import teams from "../assets/teams.webp";
+import teamDetail from "../assets/team-detail.webp";
+import notifications from "../assets/notifications.webp";
 
 
 export const Route = createFileRoute("/")({
