@@ -7,17 +7,17 @@ import {
   ListChecks, Inbox, Clock, TrendingUp, MousePointerClick, Apple, Chrome,
   Twitter, Github, Linkedin,
 } from "lucide-react";
-import logoAsset from "@/assets/apple-touch-icon.png.asset.json";
-import dashboardAsset from "@/assets/app/dashboard.png.asset.json";
-import tasksAsset from "@/assets/app/tasks.png.asset.json";
-import tasksLightAsset from "@/assets/app/tasks-light.png.asset.json";
-import meetingsAsset from "@/assets/app/meetings.png.asset.json";
-import meetingLiveAsset from "@/assets/app/meeting-live.png.asset.json";
-import meetingRecordingAsset from "@/assets/app/meeting-recording.png.asset.json";
-import notesAsset from "@/assets/app/notes.png.asset.json";
-import teamsAsset from "@/assets/app/teams.png.asset.json";
-import teamDetailAsset from "@/assets/app/team-detail.png.asset.json";
-import notificationsAsset from "@/assets/app/notifications.png.asset.json";
+import logo from "../assets/logo.png";
+import dashboard from "../assets/dashboard.png";
+import tasks from "../assets/tasks.png";
+import tasksLight from "../assets/tasks-light.png";
+import meetings from "../assets/meetings.png";
+import meetingLive from "../assets/meeting-live.png";
+import meetingRecording from "../assets/meeting-recording.png";
+import notes from "../assets/notes.png";
+import teams from "../assets/teams.png";
+import teamDetail from "../assets/team-detail.png";
+import notifications from "../assets/notifications.png";
 
 
 export const Route = createFileRoute("/")({
@@ -133,7 +133,7 @@ function DashboardMockup() {
             <div className="ml-3 text-xs text-muted-foreground">runam.app / dashboard</div>
           </div>
           <img
-            src={dashboardAsset.url}
+            src={dashboard}
             alt="Runam dashboard showing productivity overview, folders, tasks and meeting stats"
             className="w-full h-auto block"
             loading="eager"
@@ -157,7 +157,7 @@ function DashboardMockup() {
         <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground"><TrendingUp className="size-4 text-emerald"/> Folder Progress</div>
         <div className="mt-2 text-2xl font-bold">68%</div>
         <div className="h-2 mt-2 rounded-full bg-muted overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-emerald to-cyan" style={{width:"68%"}} />
+          <div className="h-full bg-linear-to-r from-emerald to-cyan" style={{width:"68%"}} />
         </div>
       </div>
 
@@ -183,7 +183,7 @@ function Nav({ dark, toggle }: { dark: boolean; toggle: () => void }) {
       <div className={`mx-auto max-w-6xl px-4 ${scrolled ? "glass rounded-2xl shadow-card" : ""} transition-all`}>
         <nav className="flex items-center justify-between py-2">
           <a href="#top" className="flex items-center gap-2">
-            <img src={logoAsset.url} alt="Runam" className="size-8 rounded-xl shadow-glow" />
+            <img src={logo} alt="Runam" className="size-8 rounded-xl shadow-glow" />
             <span className="font-bold text-lg tracking-tight">Runam</span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
@@ -319,7 +319,7 @@ function FolderFirst() {
           {steps.map((s, i) => (
             <div key={s.l} className="relative">
               <div className="glass rounded-2xl p-6 text-center shadow-card hover:-translate-y-1 transition">
-                <div className={`mx-auto size-12 rounded-xl bg-gradient-to-br ${s.c} grid place-items-center text-white shadow-glow`}>
+                <div className={`mx-auto size-12 rounded-xl bg-linear-to-br ${s.c} grid place-items-center text-white shadow-glow`}>
                   <s.icon className="size-6"/>
                 </div>
                 <div className="mt-3 text-xs uppercase tracking-wider text-muted-foreground">Level {i+1}</div>
@@ -469,7 +469,7 @@ function AIMeetingSection() {
           <div className="absolute -inset-8 bg-gradient-brand opacity-25 blur-3xl"/>
           <div className="relative glass rounded-3xl p-2 shadow-elegant overflow-hidden">
             <img
-              src={meetingsAsset.url}
+              src={meetings}
               alt="Runam meetings view with AI recording summary and take details"
               className="rounded-2xl w-full h-auto block border border-border"
               loading="lazy"
@@ -477,7 +477,7 @@ function AIMeetingSection() {
           </div>
           <div className="hidden md:block absolute -bottom-8 -left-6 w-64 glass rounded-2xl p-2 shadow-card animate-float-slow">
             <img
-              src={meetingRecordingAsset.url}
+              src={meetingRecording}
               alt="Live AI recording panel"
               className="rounded-xl w-full h-auto block border border-border"
               loading="lazy"
@@ -505,10 +505,10 @@ function NotesSection() {
           </ul>
         </div>
         <div className="lg:col-span-3 relative" data-reveal>
-          <div className="absolute -inset-6 bg-gradient-to-br from-emerald/20 to-cyan/20 blur-3xl"/>
+          <div className="absolute -inset-6 bg-linear-to-br from-emerald/20 to-cyan/20 blur-3xl"/>
           <div className="relative glass rounded-3xl shadow-elegant overflow-hidden p-2">
             <img
-              src={notesAsset.url}
+              src={notes}
               alt="Runam notes editor with rich text formatting and folder-based organization"
               className="rounded-2xl w-full h-auto block border border-border"
               loading="lazy"
@@ -610,7 +610,7 @@ function DashboardStats() {
             <div className="mt-5 h-44 flex items-end gap-1.5">
               {Array.from({length:24}).map((_,i)=>{
                 const h = 20 + Math.abs(Math.sin(i/2))*80 + (i*1.2);
-                return <div key={i} className="flex-1 rounded-md bg-gradient-to-t from-indigo/70 to-electric" style={{height: `${Math.min(h,100)}%`, transition: "height .6s", transitionDelay: `${i*30}ms`}} />;
+                return <div key={i} className="flex-1 rounded-md bg-linear-to-t from-indigo/70 to-electric" style={{height: `${Math.min(h,100)}%`, transition: "height .6s", transitionDelay: `${i*30}ms`}} />;
               })}
             </div>
           </div>
@@ -621,7 +621,7 @@ function DashboardStats() {
                 <div key={n}>
                   <div className="flex justify-between text-xs mb-1.5"><span>{n}</span><span className="text-muted-foreground">{p}%</span></div>
                   <div className="h-2 rounded-full bg-muted overflow-hidden">
-                    <div className={`h-full bg-gradient-to-r from-${c} to-electric`} style={{width:`${p}%`}}/>
+                    <div className={`h-full bg-linear-to-r from-${c} to-electric`} style={{width:`${p}%`}}/>
                   </div>
                 </div>
               ))}
@@ -649,7 +649,7 @@ function HowItWorks() {
           <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight">From idea to <span className="text-gradient">delivered.</span></h2>
         </div>
         <div className="relative">
-          <div className="hidden md:block absolute left-0 right-0 top-12 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="hidden md:block absolute left-0 right-0 top-12 h-px bg-linear-to-r from-transparent via-border to-transparent" />
           <div className="grid md:grid-cols-5 gap-5">
             {steps.map((s) => (
               <div key={s.n} className="text-center" data-reveal>
@@ -867,12 +867,12 @@ function Footer() {
 /* ---------- Page ---------- */
 function ProductGallery() {
   const shots = [
-    { src: tasksAsset.url, title: "Personal & Team Folders", desc: "Tabbed views, fast search, and a clean folder table." },
-    { src: teamsAsset.url, title: "Teams", desc: "Add teams, manage members, and collaborate on shared work." },
-    { src: teamDetailAsset.url, title: "Roles & Invites", desc: "Owner, member, and pending invites — all in one place." },
-    { src: meetingLiveAsset.url, title: "Live AI Recording", desc: "Record meetings with daily limits and pause/stop controls." },
-    { src: notificationsAsset.url, title: "Smart Notifications", desc: "Stay on top of meetings, tasks, and team updates." },
-    { src: tasksLightAsset.url, title: "Light Mode, Built-in", desc: "Beautiful in both light and dark — your call." },
+    { src: tasks, title: "Personal & Team Folders", desc: "Tabbed views, fast search, and a clean folder table." },
+    { src: teams, title: "Teams", desc: "Add teams, manage members, and collaborate on shared work." },
+    { src: teamDetail, title: "Roles & Invites", desc: "Owner, member, and pending invites — all in one place." },
+    { src: meetingLive, title: "Live AI Recording", desc: "Record meetings with daily limits and pause/stop controls." },
+    { src: notifications, title: "Smart Notifications", desc: "Stay on top of meetings, tasks, and team updates." },
+    { src: tasksLight, title: "Light Mode, Built-in", desc: "Beautiful in both light and dark — your call." },
   ];
   return (
     <section className="py-24 md:py-32">
