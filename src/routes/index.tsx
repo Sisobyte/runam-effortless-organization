@@ -7,6 +7,7 @@ import {
   ListChecks, Inbox, Clock, TrendingUp, MousePointerClick, Apple, Chrome,
   Twitter, Github, Linkedin,
 } from "lucide-react";
+import logoAsset from "@/assets/apple-touch-icon.png.asset.json";
 import dashboardAsset from "@/assets/app/dashboard.png.asset.json";
 import tasksAsset from "@/assets/app/tasks.png.asset.json";
 import tasksLightAsset from "@/assets/app/tasks-light.png.asset.json";
@@ -182,7 +183,7 @@ function Nav({ dark, toggle }: { dark: boolean; toggle: () => void }) {
       <div className={`mx-auto max-w-6xl px-4 ${scrolled ? "glass rounded-2xl shadow-card" : ""} transition-all`}>
         <nav className="flex items-center justify-between py-2">
           <a href="#top" className="flex items-center gap-2">
-            <div className="size-8 rounded-xl bg-gradient-brand shadow-glow" />
+            <img src={logoAsset.url} alt="Runam" className="size-8 rounded-xl shadow-glow" />
             <span className="font-bold text-lg tracking-tight">Runam</span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
