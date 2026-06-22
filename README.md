@@ -156,8 +156,14 @@ npm install
 
 # Add environment variables
 cp .env
-# Fill in: SUPABASE_URL, SUPABASE_ANON_KEY, GEMINI_API_KEY, RESEND_API_KEY
-
+# Only two variables needed:
+# VITE_SUPABASE_URL
+# VITE_SUPABASE_ANON_KEY
+```
+ 
+> **Security note:** Gemini API and Resend API keys are never exposed to the frontend. They are stored as Supabase secrets and called exclusively through Supabase Edge Functions server-side. The only client-side environment variables are the Supabase URL and anon key, which are safe for frontend use by design.
+ 
+```bash
 # Start dev server
 npm run dev
 ```
