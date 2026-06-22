@@ -23,7 +23,7 @@ The result is organised work that scales without becoming chaos.
 | Layer | Technology |
 |---|---|
 | Frontend (App) | React · TypeScript · Tailwind CSS · Vite |
-| Frontend (Landing) | Next.js |
+| Frontend (Landing) | Tanstack |
 | Backend | Node.js · Supabase (PostgreSQL) |
 | Auth | Supabase Auth (Email + Google OAuth) |
 | AI | Google AI Studio — Gemini API |
