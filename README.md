@@ -145,11 +145,10 @@ Runam is my first solo SaaS project, built entirely independently. Real engineer
 
 ---
 ## Local Setup
-
 ```bash
 # Clone the repo
-git clone https://github.com/Sisobyte/daily-flow.git
-cd runam
+git clone https://github.com/Sisobyte/runam-app.git
+cd runam-app
 
 # Install dependencies
 npm install
